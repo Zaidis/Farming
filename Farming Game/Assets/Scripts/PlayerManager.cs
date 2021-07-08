@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager instance;
     private CharacterController controller;
     [Header("Player Body")]
     [SerializeField] private Vector3 velocity;
@@ -14,11 +15,16 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float movementSpeed;
     [SerializeField] private float jumpHeight;
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] public LayerMask groundLayer;
     [SerializeField] private GameObject hoeParent;
     public float mouseSensitivity { get; set; }
     float xRotation = 0f;
     private void Awake() {
+        if(instance == null) {
+            instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
         controller = this.gameObject.GetComponent<CharacterController>();
     }
     private void Start() {
