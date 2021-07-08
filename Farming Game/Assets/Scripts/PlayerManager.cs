@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float jumpHeight;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private GameObject hoeParent;
     public float mouseSensitivity { get; set; }
     float xRotation = 0f;
     private void Awake() {
@@ -25,13 +26,14 @@ public class PlayerManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
     private void Update() {
-
+        
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90f);
         Camera.main.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        hoeParent.transform.localRotation = Camera.main.transform.localRotation;
         transform.Rotate(Vector3.up * mouseX);
 
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.4f, groundLayer);
