@@ -6,7 +6,13 @@ public class FarmingManager : MonoBehaviour
 {
     public float maxDistance;
     public LayerMask ground;
+    public LayerMask itemMask;
     public GameObject test;
+    public Transform handLocation;
+    public bool isHolding;
+    public float force;
+    public List<GameObject> objects = new List<GameObject>();
+    public int objectAmount;
     private void Awake() {
         Physics.IgnoreLayerCollision(9, 10);
     }
@@ -25,7 +31,75 @@ public class FarmingManager : MonoBehaviour
             } else if (GameManager.instance.currentItemSlotNum == 1) { //other tool
 
             } else { //your hand
+                if (isHolding) { //drop item
+                    GameObject obj = objects[objects.Count - 1];
+                    obj.GetComponent<Rigidbody>().useGravity = true;
+                    obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    obj.GetComponent<Rigidbody>().drag = 0;
+                    obj.GetComponent<Collider>().enabled = true;
+                    obj.transform.parent = null;
+                    objects.Remove(obj);
 
+                    if(objects.Count <= 0)
+                        isHolding = false;
+                }
+            }
+        } else if (Input.GetKeyDown(KeyCode.E)) {
+            if (!isHolding) { //if you are not holding onto an object
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, maxDistance, itemMask)) {
+                    if (hit.collider.gameObject.CompareTag("Item")) {
+                        
+                        GameObject obj = hit.collider.gameObject;
+                        objects.Add(obj);
+                        obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        obj.GetComponent<Rigidbody>().useGravity = false;
+                        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                        obj.GetComponent<Collider>().enabled = false;
+                        obj.transform.parent = handLocation;
+                        obj.GetComponent<Rigidbody>().drag = 100;
+                        obj.transform.localPosition = Vector3.zero;
+
+                        isHolding = true;
+                    }
+                }
+            } else { //you ARE holding onto something
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, maxDistance, itemMask)) {
+                    if (hit.collider.gameObject.CompareTag("Item")) {
+                        
+                        GameObject obj = hit.collider.gameObject;
+
+                        if (obj.GetComponent<Seed>().seedCrop == objects[0].GetComponent<Seed>().seedCrop) { //makes sure you pick up the same type of object that you are aleady holding
+                            objects.Add(obj);
+                            obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                            obj.GetComponent<Rigidbody>().useGravity = false;
+                            obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                            obj.GetComponent<Collider>().enabled = false;
+                            obj.transform.parent = handLocation;
+                            obj.GetComponent<Rigidbody>().drag = 100;
+                            obj.transform.localPosition = Vector3.zero;
+                        }
+                    }
+                }
+            }
+        } else if (Input.GetMouseButtonDown(1)) {
+            if (isHolding) { //drop item
+                GameObject obj = objects[objects.Count - 1];
+                obj.GetComponent<Rigidbody>().useGravity = true;
+                obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                obj.GetComponent<Rigidbody>().drag = 0;
+                obj.GetComponent<Collider>().enabled = true;
+                obj.transform.parent = null;
+                obj.GetComponent<Rigidbody>().AddForce(handLocation.transform.forward * force, ForceMode.Impulse);
+                objects.Remove(obj);
+
+                if (objects.Count <= 0)
+                    isHolding = false;
             }
         }
     }
