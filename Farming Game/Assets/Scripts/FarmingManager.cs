@@ -11,6 +11,7 @@ public class FarmingManager : MonoBehaviour
     public Transform handLocation;
     public bool isHolding;
     public float force;
+
     public List<GameObject> objects = new List<GameObject>();
     public int objectAmount;
     private void Awake() {
@@ -39,8 +40,8 @@ public class FarmingManager : MonoBehaviour
                     obj.GetComponent<Collider>().enabled = true;
                     obj.transform.parent = null;
                     objects.Remove(obj);
-
-                    if(objects.Count <= 0)
+                    GameManager.instance.ChangeItemCount(-1);
+                    if (objects.Count <= 0)
                         isHolding = false;
                 }
             }
@@ -62,6 +63,7 @@ public class FarmingManager : MonoBehaviour
                         obj.GetComponent<Rigidbody>().drag = 100;
                         obj.transform.localPosition = Vector3.zero;
 
+                        GameManager.instance.ChangeItemCount(1);
                         isHolding = true;
                     }
                 }
@@ -83,6 +85,7 @@ public class FarmingManager : MonoBehaviour
                             obj.transform.parent = handLocation;
                             obj.GetComponent<Rigidbody>().drag = 100;
                             obj.transform.localPosition = Vector3.zero;
+                            GameManager.instance.ChangeItemCount(1);
                         }
                     }
                 }
@@ -97,7 +100,7 @@ public class FarmingManager : MonoBehaviour
                 obj.transform.parent = null;
                 obj.GetComponent<Rigidbody>().AddForce(handLocation.transform.forward * force, ForceMode.Impulse);
                 objects.Remove(obj);
-
+                GameManager.instance.ChangeItemCount(-1);
                 if (objects.Count <= 0)
                     isHolding = false;
             }

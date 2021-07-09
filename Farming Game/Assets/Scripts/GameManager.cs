@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -17,6 +18,11 @@ public class GameManager : MonoBehaviour
 
     private Color32 onSlot = new Color32(150, 255, 250, 255);
     private Color32 offSlot = new Color32(150, 255, 250, 160);
+
+    //Item counter
+    public GameObject counter;
+    public TextMeshProUGUI itemCounterText;
+    public int countNum;
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -65,5 +71,15 @@ public class GameManager : MonoBehaviour
         }
         items[currentItemSlotNum].gameObject.SetActive(true);
 
+    }
+
+    public void ChangeItemCount(int num) {
+        countNum += num;
+        itemCounterText.text = countNum.ToString();
+        if(countNum <= 0) {
+            counter.SetActive(false);
+        } else {
+            counter.SetActive(true);
+        }
     }
 }
