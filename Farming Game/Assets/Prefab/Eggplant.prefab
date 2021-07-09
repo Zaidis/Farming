@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8393193710992891250}
   - component: {fileID: 1211845258871406956}
   - component: {fileID: 1211845258871406957}
-  - component: {fileID: 3513655190393592202}
+  - component: {fileID: 8043505587399250696}
   m_Layer: 11
   m_Name: Eggplant
   m_TagString: Item
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3513655190393592202
+--- !u!114 &8043505587399250696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,10 +124,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1211845258871406946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee29b448a12cfe6418af131cc2fb6af5, type: 3}
+  m_Script: {fileID: 11500000, guid: d2f7d354ea607c642a5ecddc0ed38105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seedCrop: {fileID: 11400000, guid: 11b3aa2593bff7548a24d29b4e1d6f73, type: 2}
+  Name: Eggplant
 --- !u!1 &2569149364483487332
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c99ffc85189094a964b900de5faca9, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  name: 
+  name: Apple

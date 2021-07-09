@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7851413600912033147
+--- !u!1 &6454536209412546510
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7475416549578776513}
-  - component: {fileID: 5769630279378866276}
-  - component: {fileID: 8643867159868990638}
-  - component: {fileID: 7851413600912033142}
-  - component: {fileID: 7851413600912033145}
-  - component: {fileID: 114689552634486091}
+  - component: {fileID: 5969748701065643380}
+  - component: {fileID: 7311335909433084625}
+  - component: {fileID: 4797426569939385883}
+  - component: {fileID: 6454536209412546507}
+  - component: {fileID: 6454536209412546508}
+  - component: {fileID: 6454536209412546509}
+  - component: {fileID: 52069871135222360}
   m_Layer: 11
-  m_Name: carrot
+  m_Name: Eggplant Seed Pack
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7475416549578776513
+--- !u!4 &5969748701065643380
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851413600912033147}
-  m_LocalRotation: {x: -0.000000026692547, y: -0.70710677, z: -0.000000026692545, w: 0.7071068}
-  m_LocalPosition: {x: 83.25207, y: 2.666278, z: 84.02198}
-  m_LocalScale: {x: 12, y: 12, z: 12}
+  m_GameObject: {fileID: 6454536209412546510}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 86.134, y: 2.439, z: 152.362}
+  m_LocalScale: {x: 40.395355, y: 40.395355, z: 133.99}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5769630279378866276
+--- !u!33 &7311335909433084625
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851413600912033147}
-  m_Mesh: {fileID: 2534964839176971238, guid: 6af9e0728b4026641be210f7645aa2a8, type: 3}
---- !u!23 &8643867159868990638
+  m_GameObject: {fileID: 6454536209412546510}
+  m_Mesh: {fileID: -462981019419857548, guid: 6150dad97b28ee3429cef3ee7507d90d, type: 3}
+--- !u!23 &4797426569939385883
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851413600912033147}
+  m_GameObject: {fileID: 6454536209412546510}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +63,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3977281815209130585, guid: 6af9e0728b4026641be210f7645aa2a8, type: 3}
+  - {fileID: 2100000, guid: 94ae2110f6a24bf4096742dff5828a11, type: 2}
+  - {fileID: -6478536213147159724, guid: 6150dad97b28ee3429cef3ee7507d90d, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,27 +86,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7851413600912033142
-MeshCollider:
+--- !u!65 &6454536209412546507
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851413600912033147}
+  m_GameObject: {fileID: 6454536209412546510}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2534964839176971238, guid: 6af9e0728b4026641be210f7645aa2a8, type: 3}
---- !u!54 &7851413600912033145
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.029999996, z: 0.00049999985}
+  m_Center: {x: 0, y: 0.0049999994, z: 0.000049999984}
+--- !u!54 &6454536209412546508
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851413600912033147}
+  m_GameObject: {fileID: 6454536209412546510}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -114,16 +115,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114689552634486091
+--- !u!114 &6454536209412546509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7851413600912033147}
+  m_GameObject: {fileID: 6454536209412546510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee29b448a12cfe6418af131cc2fb6af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seedCrop: {fileID: 11400000, guid: 11b3aa2593bff7548a24d29b4e1d6f73, type: 2}
+--- !u!114 &52069871135222360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454536209412546510}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2f7d354ea607c642a5ecddc0ed38105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Carrot
+  Name: Egg_Seed

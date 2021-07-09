@@ -31,7 +31,7 @@ public class BasketManager : MonoBehaviour
 
         whiteBoard.text = newRecipe.recipeText;
     }
-    public void CheckBasket() {
+    public bool CheckBasket() {
         for(int i = 0; i < cropsInBasket.Count; i++) {
             Crop crop = cropsInBasket[i];
             for(int j = 0; j < recipe.Count; j++) {
@@ -45,19 +45,26 @@ public class BasketManager : MonoBehaviour
         if(recipe.Count > 0) {
             //you pissed off the goat god
             Debug.Log("You pissed off the Goat God");
+            return false;
         } else {
             //the goat god is indeed happy with the results
             Debug.Log("The Goat God is pleased");
         }
 
         NewRecipe();
+        return true;
     }
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.gameObject.CompareTag("Item")) {
             GameObject obj = collision.collider.gameObject;
+            string cropName = obj.GetComponent<Item>().Name;
             if(obj.GetComponent<Seed>() != null) {
-                //it is an object for the basket
-                cropsInBasket.Add(obj.GetComponent<Seed>().seedCrop);
+                //this is a seed
+                return;
+            } else {
+                //this is an item for the basket
+                Crop crop = GameManager.instance.gameObject.GetComponent<ItemDatabase>().FindCrop(cropName);
+                cropsInBasket.Add(crop);
                 Destroy(obj.gameObject);
             }
         }

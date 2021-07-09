@@ -10,6 +10,13 @@ public class GameManager : MonoBehaviour
     public Material niceSkybox;
     public Material meanSkybox;
 
+    [Header("Goat")]
+    private float maxGoatTimer = 240f;
+    public float goatTimer;
+    public GameObject goat;
+    public Transform goatSpawnLocation;
+    public Light globalLight;
+    [Header("Item Slots")]
     public List<GameObject> itemSlots = new List<GameObject>();
     public List<GameObject> items = new List<GameObject>();
     public GameObject currentItemSlot;
@@ -29,7 +36,7 @@ public class GameManager : MonoBehaviour
     public int countNum;
 
     public float appleTimer;
-    private float maxAppleTimer = 40f;
+    private float maxAppleTimer = 25f;
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -38,14 +45,32 @@ public class GameManager : MonoBehaviour
         }
     }
     private void Start() {
+        goatTimer = maxGoatTimer;
         for(int i = 0; i < itemSlots.Count; i++) {
             itemSlots[i].transform.GetChild(0).GetComponent<Image>().color = offSlot;
             items[i].gameObject.SetActive(false);
         }
         InitializeSlot(); //initially the first slot, the left most slot
     }
-
+    public void SpawnGoatLord() {
+        Instantiate(goat, goatSpawnLocation.position, Quaternion.identity);
+    }
+    public void GoatNotAngry() {
+        RenderSettings.skybox = niceSkybox;
+        globalLight.color = new Color32(255, 244, 214, 255);
+    }
+    public void GoatIsAngry() {
+        RenderSettings.skybox = meanSkybox;
+        globalLight.color = Color.red;
+    }
     private void Update() {
+
+        goatTimer -= Time.deltaTime;
+        if(goatTimer <= 0) {
+            SpawnGoatLord();
+            goatTimer = maxGoatTimer;
+        }
+
         if(Input.GetAxis("Mouse ScrollWheel") < 0f) {
             //up
             currentItemSlotNum++;

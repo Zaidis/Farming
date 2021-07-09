@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Seed
   - Item
+  - Basket
   layers:
   - Default
   - TransparentFX

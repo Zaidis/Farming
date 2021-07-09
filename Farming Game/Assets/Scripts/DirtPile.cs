@@ -19,8 +19,8 @@ public class DirtPile : MonoBehaviour
         } else {
             cropTimer -= Time.deltaTime;
             if(cropTimer <= 0) {
-                for(int i = 0; i < GameManager.instance.gameObject.GetComponent<ItemDatabase>().crops.Count; i++) {
-                    if(myCrop == GameManager.instance.gameObject.GetComponent<ItemDatabase>().crops[i].GetComponent<Seed>().seedCrop) {
+                for(int i = 0; i < GameManager.instance.gameObject.GetComponent<ItemDatabase>().cropsList.Count; i++) {
+                    if(myCrop == GameManager.instance.gameObject.GetComponent<ItemDatabase>().cropsList[i]) {
                         Instantiate(GameManager.instance.gameObject.GetComponent<ItemDatabase>().crops[i], spawnlocation.position, Quaternion.identity);
                         break;
                     }
@@ -33,11 +33,14 @@ public class DirtPile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.gameObject.CompareTag("Item")) {
-            GameObject crop = collision.collider.gameObject;
 
-            myCrop = crop.GetComponent<Seed>().seedCrop;
-            hasCrop = true;
-            Destroy(crop.gameObject);
+            GameObject crop = collision.collider.gameObject;
+            if(crop.GetComponent<Seed>() != null) {
+                myCrop = crop.GetComponent<Seed>().seedCrop;
+                hasCrop = true;
+                Destroy(crop.gameObject);
+            }
+           
         }
     }
 }

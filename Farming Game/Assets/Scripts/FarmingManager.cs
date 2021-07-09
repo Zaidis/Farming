@@ -86,17 +86,18 @@ public class FarmingManager : MonoBehaviour
                     if (hit.collider.gameObject.CompareTag("Item")) {
                         
                         GameObject obj = hit.collider.gameObject;
-
-                        if (obj.GetComponent<Seed>().seedCrop == objects[0].GetComponent<Seed>().seedCrop) { //makes sure you pick up the same type of object that you are aleady holding
-                            objects.Add(obj);
-                            obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                            obj.GetComponent<Rigidbody>().useGravity = false;
-                            obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-                            obj.GetComponent<Collider>().enabled = false;
-                            obj.transform.parent = handLocation;
-                            obj.GetComponent<Rigidbody>().drag = 100;
-                            obj.transform.localPosition = Vector3.zero;
-                            GameManager.instance.ChangeItemCount(1);
+                        if (obj.GetComponent<Item>().Name == objects[0].GetComponent<Item>().Name) {
+                            //if (obj.GetComponent<Seed>().seedCrop == objects[0].GetComponent<Seed>().seedCrop) { //makes sure you pick up the same type of object that you are aleady holding
+                                objects.Add(obj);
+                                obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                                obj.GetComponent<Rigidbody>().useGravity = false;
+                                obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                                obj.GetComponent<Collider>().enabled = false;
+                                obj.transform.parent = handLocation;
+                                obj.GetComponent<Rigidbody>().drag = 100;
+                                obj.transform.localPosition = Vector3.zero;
+                                GameManager.instance.ChangeItemCount(1);
+                            //}
                         }
                     }
                 }
