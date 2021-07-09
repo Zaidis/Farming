@@ -13002,6 +13002,7 @@ MonoBehaviour:
   goat: {fileID: 8845140450761073326, guid: 03ee28a2e50297a48a9a48083e7601c6, type: 3}
   goatSpawnLocation: {fileID: 933486575}
   globalLight: {fileID: 486465470}
+  zone: {fileID: 1908952567}
   itemSlots:
   - {fileID: 768629151}
   - {fileID: 462987800}

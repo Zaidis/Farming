@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject goat;
     public Transform goatSpawnLocation;
     public Light globalLight;
+    public WindZone zone;
     [Header("Item Slots")]
     public List<GameObject> itemSlots = new List<GameObject>();
     public List<GameObject> items = new List<GameObject>();
@@ -61,10 +62,12 @@ public class GameManager : MonoBehaviour
     public void GoatNotAngry() {
         RenderSettings.skybox = niceSkybox;
         globalLight.color = new Color32(255, 244, 214, 255);
+        zone.windTurbulence = 1f;
     }
     public void GoatIsAngry() {
         RenderSettings.skybox = meanSkybox;
         globalLight.color = Color.red;
+        zone.windTurbulence = 15f;
     }
     private void Update() {
 
