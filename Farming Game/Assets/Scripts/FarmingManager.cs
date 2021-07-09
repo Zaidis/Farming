@@ -8,6 +8,7 @@ public class FarmingManager : MonoBehaviour
     public LayerMask ground;
     public LayerMask itemMask;
     public LayerMask buttonMask;
+    public LayerMask bowlingMask;
     public GameObject dirtPile;
     public Transform handLocation;
     public bool isHolding;
@@ -51,6 +52,8 @@ public class FarmingManager : MonoBehaviour
             //checks to see if you left clicked on a button
             if(Physics.Raycast(ray, out hit, maxDistance, buttonMask)) {
                 hit.collider.gameObject.GetComponent<Button_V>().SpawnItem();
+            } else if (Physics.Raycast(ray, out hit, maxDistance, bowlingMask)) {
+                hit.collider.gameObject.GetComponent<Bowling>().ResetPins();
             }
 
         } else if (Input.GetKeyDown(KeyCode.E)) {
