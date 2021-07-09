@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Seed
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Ground
   - Player
   - Pointer
-  - 
+  - Item
   - 
   - 
   - 

@@ -20,7 +20,7 @@ public class DirtPile : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.collider.gameObject.CompareTag("Seed")) {
+        if (collision.collider.gameObject.CompareTag("Item")) {
             GameObject crop = collision.collider.gameObject;
 
             myCrop = crop.GetComponent<Seed>().seedCrop;
