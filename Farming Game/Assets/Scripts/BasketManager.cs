@@ -4,11 +4,20 @@ using UnityEngine;
 using TMPro;
 public class BasketManager : MonoBehaviour
 {
+    public static BasketManager instance;
     public List<Recipe> recipies = new List<Recipe>();
     public List<Crop> recipe = new List<Crop>(); //what the goat god wants
     public List<Crop> cropsInBasket = new List<Crop>(); //what the goat god is getting
 
     public TextMeshPro whiteBoard;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(this.gameObject);
+        }
+    }
     private void Start() {
         NewRecipe();
     }
@@ -37,8 +46,11 @@ public class BasketManager : MonoBehaviour
             //you pissed off the goat god
             Debug.Log("You pissed off the Goat God");
         } else {
+            //the goat god is indeed happy with the results
             Debug.Log("The Goat God is pleased");
         }
+
+        NewRecipe();
     }
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.gameObject.CompareTag("Item")) {

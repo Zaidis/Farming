@@ -6,6 +6,10 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public Material niceSkybox;
+    public Material meanSkybox;
+
     public List<GameObject> itemSlots = new List<GameObject>();
     public List<GameObject> items = new List<GameObject>();
     public GameObject currentItemSlot;
@@ -62,6 +66,10 @@ public class GameManager : MonoBehaviour
         if(appleTimer <= 0) {
             Tree.Instance.SpawnApple();
             appleTimer = maxAppleTimer;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            BasketManager.instance.CheckBasket();
         }
 
     }
