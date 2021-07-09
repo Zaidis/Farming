@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public GameObject counter;
     public TextMeshProUGUI itemCounterText;
     public int countNum;
+
+    public float appleTimer;
+    private float maxAppleTimer = 40f;
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -54,6 +57,13 @@ public class GameManager : MonoBehaviour
             }
             ChangeSlot();
         }
+
+        appleTimer -= Time.deltaTime;
+        if(appleTimer <= 0) {
+            Tree.Instance.SpawnApple();
+            appleTimer = maxAppleTimer;
+        }
+
     }
 
     void InitializeSlot() {
