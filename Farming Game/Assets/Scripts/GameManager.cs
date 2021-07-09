@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject currentItemSlot;
     /*
      * 1. Hoe
-     * 2. Other Tool
+     * 2. Water can
      * 3. Open Hand
      */
     public int currentItemSlotNum = 0;
@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
 
     public float appleTimer;
     private float maxAppleTimer = 25f;
+
+    [Header("Dirt Material")]
+    public Material dirtWet;
     private void Awake() {
         if(instance == null) {
             instance = this;

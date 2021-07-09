@@ -8,6 +8,7 @@ TagManager:
   - Seed
   - Item
   - Basket
+  - Dirt
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Item
   - Button
   - Bowling
-  - 
+  - Dirt
   - 
   - 
   - 

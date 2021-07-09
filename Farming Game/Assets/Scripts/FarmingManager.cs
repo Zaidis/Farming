@@ -32,7 +32,9 @@ public class FarmingManager : MonoBehaviour
                     GameObject dirt = Instantiate(dirtPile, location, Quaternion.identity);
                     dirt.transform.rotation = Quaternion.Euler(-90, 0, 0);
                 }
-            } else if (GameManager.instance.currentItemSlotNum == 1) { //other tool
+            } else if (GameManager.instance.currentItemSlotNum == 1) { //watercan
+                //this will affect the watering can. use this to make the dirt wet
+                GameManager.instance.items[1].GetComponent<WaterCan>().TurnOn();
 
             } else { //your hand
                 if (isHolding) { //drop item

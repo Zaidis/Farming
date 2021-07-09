@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4573727015088204497}
   - component: {fileID: 7660862232174012230}
   - component: {fileID: 1428007552016950896}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Dirt Pile
-  m_TagString: Untagged
+  m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6126091556477775235, guid: 3c361e0ff12046f439809e91fd1aa44d, type: 3}
+  - {fileID: 2100000, guid: 52472c069daaab545bc65ec03b48d2a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   myCrop: {fileID: 0}
   spawnlocation: {fileID: 8508567743972739030}
   hasCrop: 0
+  isWet: 0
 --- !u!64 &7660862232174012230
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8508567743972739030}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,6 +10,7 @@ public class DirtPile : MonoBehaviour
     private float deathTimer = 60f;
     private float cropTimer = 60f;
     public bool hasCrop;
+    public bool isWet;
     private void Update() {
         if (!hasCrop) {
             deathTimer -= Time.deltaTime;
@@ -17,7 +18,12 @@ public class DirtPile : MonoBehaviour
                 Destroy(this.gameObject);
             }
         } else {
-            cropTimer -= Time.deltaTime;
+            if (isWet) {
+                cropTimer -= Time.deltaTime * 2;
+            } else {
+                cropTimer -= Time.deltaTime;
+            }
+            
             if(cropTimer <= 0) {
                 for(int i = 0; i < GameManager.instance.gameObject.GetComponent<ItemDatabase>().cropsList.Count; i++) {
                     if(myCrop == GameManager.instance.gameObject.GetComponent<ItemDatabase>().cropsList[i]) {
@@ -30,7 +36,14 @@ public class DirtPile : MonoBehaviour
         }
         
     }
-
+    public void Wet() {
+        isWet = true;
+        GetComponent<MeshRenderer>().material = GameManager.instance.dirtWet;
+    }
+    private void OnParticleCollision() {
+        print("hi");
+        Wet();
+    }
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.gameObject.CompareTag("Item")) {
 
