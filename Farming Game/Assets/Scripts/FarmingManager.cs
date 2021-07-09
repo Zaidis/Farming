@@ -7,7 +7,8 @@ public class FarmingManager : MonoBehaviour
     public float maxDistance;
     public LayerMask ground;
     public LayerMask itemMask;
-    public GameObject test;
+    public LayerMask buttonMask;
+    public GameObject dirtPile;
     public Transform handLocation;
     public bool isHolding;
     public float force;
@@ -27,7 +28,8 @@ public class FarmingManager : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, maxDistance, ground)) {
                     Vector3 location = hit.point;
 
-                    Instantiate(test, location, Quaternion.identity);
+                    GameObject dirt = Instantiate(dirtPile, location, Quaternion.identity);
+                    dirt.transform.rotation = Quaternion.Euler(-90, 0, 0);
                 }
             } else if (GameManager.instance.currentItemSlotNum == 1) { //other tool
 
@@ -45,6 +47,12 @@ public class FarmingManager : MonoBehaviour
                         isHolding = false;
                 }
             }
+
+            //checks to see if you left clicked on a button
+            if(Physics.Raycast(ray, out hit, maxDistance, buttonMask)) {
+                hit.collider.gameObject.GetComponent<Button_V>().SpawnItem();
+            }
+
         } else if (Input.GetKeyDown(KeyCode.E)) {
             if (!isHolding) { //if you are not holding onto an object
                 RaycastHit hit;

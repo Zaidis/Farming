@@ -39,14 +39,14 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetAxis("Mouse ScrollWheel") > 0f) {
+        if(Input.GetAxis("Mouse ScrollWheel") < 0f) {
             //up
             currentItemSlotNum++;
             if (currentItemSlotNum > 2) {
                 currentItemSlotNum = 0;
             }
             ChangeSlot();
-        } else if (Input.GetAxis("Mouse ScrollWheel") < 0f) {
+        } else if (Input.GetAxis("Mouse ScrollWheel") > 0f) {
             //down
             currentItemSlotNum--;
             if(currentItemSlotNum < 0) {
