@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    public bool gameHasStarted;
     public Material niceSkybox;
     public Material meanSkybox;
 
@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public Transform goatSpawnLocation;
     public Light globalLight;
     public WindZone zone;
+    public TextMeshProUGUI offeringText; //text on the UI
+    public AudioClip goatScream;
+    public AudioClip niceSound;
     [Header("Item Slots")]
     public List<GameObject> itemSlots = new List<GameObject>();
     public List<GameObject> items = new List<GameObject>();
@@ -25,6 +28,10 @@ public class GameManager : MonoBehaviour
     public Sprite handIconSprite;
     public Sprite[] holdingIcons;
     public GameObject currentItemSlot;
+
+    [Header("Settings Menu")]
+    public GameObject settingsMenu;
+    public bool inSettings;
     /*
      * 1. Hoe
      * 2. Water can
@@ -54,7 +61,8 @@ public class GameManager : MonoBehaviour
     }
     private void Start() {
         goatTimer = maxGoatTimer;
-        for(int i = 0; i < itemSlots.Count; i++) {
+        offeringText.text = "Next Offering: " + goatTimer.ToString("0");
+        for (int i = 0; i < itemSlots.Count; i++) {
             itemSlots[i].transform.GetChild(0).GetComponent<Image>().color = offSlot;
             items[i].gameObject.SetActive(false);
         }
@@ -67,19 +75,37 @@ public class GameManager : MonoBehaviour
         RenderSettings.skybox = niceSkybox;
         globalLight.color = new Color32(255, 244, 214, 255);
         zone.windTurbulence = 1f;
+        this.GetComponent<AudioSource>().clip = niceSound;
+        this.GetComponent<AudioSource>().loop = false;
+        this.GetComponent<AudioSource>().Play();
     }
     public void GoatIsAngry() {
         RenderSettings.skybox = meanSkybox;
         globalLight.color = Color.red;
         zone.windTurbulence = 15f;
+        SoundManager.instance.StopMusic();
+        this.GetComponent<AudioSource>().clip = goatScream;
+        this.GetComponent<AudioSource>().loop = true;
+        this.GetComponent<AudioSource>().Play();
     }
     private void Update() {
-
-        goatTimer -= Time.deltaTime;
-        if(goatTimer <= 0) {
-            SpawnGoatLord();
-            goatTimer = maxGoatTimer;
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (!inSettings) {
+                settingsMenu.SetActive(true);
+                inSettings = true;
+                Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.None;
+            } else {
+                settingsMenu.SetActive(false);
+                inSettings = false;
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
+
+        
+
+        
 
         if(Input.GetAxis("Mouse ScrollWheel") < 0f) {
             //up
@@ -96,15 +122,20 @@ public class GameManager : MonoBehaviour
             }
             ChangeSlot();
         }
+        if (gameHasStarted) { //called when the game has officially started
 
-        appleTimer -= Time.deltaTime;
-        if(appleTimer <= 0) {
-            Tree.Instance.SpawnApple();
-            appleTimer = maxAppleTimer;
-        }
+            goatTimer -= Time.deltaTime;
+            offeringText.text = "Next Offering: " + goatTimer.ToString("0");
+            if (goatTimer <= 0) {
+                SpawnGoatLord();
+                goatTimer = maxGoatTimer;
+            }
 
-        if (Input.GetKeyDown(KeyCode.R)) {
-            BasketManager.instance.CheckBasket();
+            appleTimer -= Time.deltaTime;
+            if (appleTimer <= 0) {
+                Tree.Instance.SpawnApple();
+                appleTimer = maxAppleTimer;
+            }
         }
 
     }

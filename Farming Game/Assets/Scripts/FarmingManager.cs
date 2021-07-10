@@ -9,6 +9,8 @@ public class FarmingManager : MonoBehaviour
     public LayerMask itemMask;
     public LayerMask buttonMask;
     public LayerMask bowlingMask;
+    public LayerMask tutMask;
+    public LayerMask openMask;
     public GameObject dirtPile;
     public Transform handLocation;
     public bool isHolding;
@@ -58,6 +60,11 @@ public class FarmingManager : MonoBehaviour
                 hit.collider.gameObject.GetComponent<Button_V>().SpawnItem();
             } else if (Physics.Raycast(ray, out hit, maxDistance, bowlingMask)) {
                 hit.collider.gameObject.GetComponent<Bowling>().ResetPins();
+            } else if (Physics.Raycast(ray, out hit, maxDistance, tutMask)) {
+                hit.collider.gameObject.transform.parent.GetComponent<Blackboard>().ChangeSlide();
+            } else if (Physics.Raycast(ray, out hit, maxDistance, openMask)) {
+                OpenDoor.instance.OpenTheDoor();
+                Destroy(hit.collider.gameObject);
             }
 
         } else if (Input.GetKeyDown(KeyCode.E)) {
