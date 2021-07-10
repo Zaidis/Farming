@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 public class Goat : MonoBehaviour
 {
     public NavMeshAgent agent;
@@ -39,7 +40,7 @@ public class Goat : MonoBehaviour
             }
         } else if (other.gameObject.CompareTag("Player")) {
             print("You have died!");
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
     }
 
