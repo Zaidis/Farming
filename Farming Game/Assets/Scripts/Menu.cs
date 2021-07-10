@@ -6,6 +6,7 @@ public class Menu : MonoBehaviour
 {
     private void Start() {
         Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 1;
     }
     public void LoadTheScene() {
         SceneManager.LoadScene(1);
