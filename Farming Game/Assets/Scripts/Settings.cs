@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 public class Settings : MonoBehaviour
 {
     public AudioMixer mixer;
@@ -17,5 +18,9 @@ public class Settings : MonoBehaviour
 
     public void QuitGame() {
         Application.Quit();
+    }
+
+    public void MainMenu() {
+        SceneManager.LoadScene(0);
     }
 }
