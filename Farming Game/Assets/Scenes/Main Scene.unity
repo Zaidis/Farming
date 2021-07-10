@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2185604
+  m_Name: pb_Mesh187874
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3045,7 +3045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a692c6bb720a72e4e86f79270a0685d8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a692c6bb720a72e4e86f79270a0685d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5427,7 +5427,7 @@ Transform:
   m_Children:
   - {fileID: 1929011955}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &358969241
 GameObject:
@@ -6119,7 +6119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6255,7 +6255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6787,7 +6787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7907,7 +7907,7 @@ Transform:
   - {fileID: 463039642}
   - {fileID: 551041862}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &483440100
 BoxCollider:
@@ -8012,7 +8012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &513511570 stripped
 GameObject:
@@ -10951,7 +10951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7475416549578776513, guid: 17cd467c3a4813e4daaf54f161ce1bda, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7475416549578776513, guid: 17cd467c3a4813e4daaf54f161ce1bda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12214,7 +12214,7 @@ Transform:
   - {fileID: 575840858}
   - {fileID: 936770917}
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &597105106
 GameObject:
@@ -13185,7 +13185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15459,7 +15459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17730,7 +17730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7475416549578776513, guid: 17cd467c3a4813e4daaf54f161ce1bda, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7475416549578776513, guid: 17cd467c3a4813e4daaf54f161ce1bda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18171,7 +18171,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936770916
 GameObject:
@@ -20231,7 +20231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -21541,7 +21541,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2185606
+  m_Name: pb_Mesh187322
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21763,7 +21763,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170714930
 GameObject:
@@ -22075,7 +22075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1194081342
 MonoBehaviour:
@@ -22320,7 +22320,7 @@ Transform:
   - {fileID: 1725356919}
   - {fileID: 315175312}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1211449197
 MonoBehaviour:
@@ -23828,7 +23828,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324174466
 GameObject:
@@ -24616,7 +24616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606963601022210841, guid: bbadf1b5a3a17bb478f2539d17ae7bbd, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2606963601022210841, guid: bbadf1b5a3a17bb478f2539d17ae7bbd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -24674,8 +24674,8 @@ MonoBehaviour:
     to the right!
   - If you have not figured it out, use WASD to move, and your mouse to move the
     camera! If you want to leave this tutorial, just press the button by the door!
-  - 'Also, use ScrollWheel to shuffle through your three boxes on the bottom there!
-    I will explain them now. '
+  - Also, use ScrollWheel to shuffle through your three boxes on the bottom there!
+    I will explain them now. Use Spacebar to jump!
   - 'You have two tools: a hoe and a watering can. The hoe is the left most box,
     and the watering can is the middle box. '
   - 'To use your hoe, left click on the ground (outside this house) to raise dirt.
@@ -25173,7 +25173,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2185610
+  m_Name: pb_Mesh187552
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25376,7 +25376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26676,7 +26676,7 @@ Transform:
   m_Children:
   - {fileID: 95160504}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1485137259
 MonoBehaviour:
@@ -26820,7 +26820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4162020120319729157, guid: 6ba45b1b1eaff92469fd3e5632d2ec85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -37126,7 +37126,7 @@ Transform:
   - {fileID: 335260721}
   - {fileID: 1516817763}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &2029579548
 Mesh:
@@ -37134,7 +37134,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2185612
+  m_Name: pb_Mesh186748
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37598,7 +37598,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2090630039
 PrefabInstance:
@@ -37637,7 +37637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6150dad97b28ee3429cef3ee7507d90d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6150dad97b28ee3429cef3ee7507d90d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -38569,7 +38569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8844001921999062769, guid: fcb7dc34f524c9c4d9121b48fa157f84, type: 3}
       propertyPath: m_RootOrder
-      value: 29
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8844001921999062769, guid: fcb7dc34f524c9c4d9121b48fa157f84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
