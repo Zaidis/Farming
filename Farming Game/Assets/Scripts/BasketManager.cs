@@ -10,7 +10,10 @@ public class BasketManager : MonoBehaviour
     public List<Crop> cropsInBasket = new List<Crop>(); //what the goat god is getting
 
     public TextMeshPro whiteBoard;
-
+    public GameObject basketText;
+    private int appleNum;
+    private int carrotNum;
+    private int eggplantNum;
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -21,9 +24,21 @@ public class BasketManager : MonoBehaviour
     private void Start() {
         NewRecipe();
     }
+
+    private void Update() {
+        //var step = 100f * Time.deltaTime;
+        //Quaternion r1 = Quaternion.Euler(PlayerManager.instance.gameObject.transform.rotation.x, 90, 90);
+        //Quaternion r2 = Quaternion.Euler(basketText.transform.localRotation.x, 90, 90);
+        //basketText.transform.localRotation = Quaternion.RotateTowards(r2, r1, step);
+        basketText.transform.LookAt(PlayerManager.instance.transform);
+    }
     public void NewRecipe() {
         int rand = Random.Range(0, recipies.Count);
         Recipe newRecipe = recipies[rand];
+        appleNum = 0;
+        carrotNum = 0;
+        eggplantNum = 0;
+        ChangeText();
         recipe.Clear();
         for(int i = 0; i < newRecipe.crops.Count; i++) {
             recipe.Add(newRecipe.crops[i]);
@@ -54,6 +69,10 @@ public class BasketManager : MonoBehaviour
         NewRecipe();
         return true;
     }
+
+    public void ChangeText() {
+        basketText.transform.GetChild(0).GetComponent<TextMeshPro>().text = appleNum + "-Apples     " + carrotNum + "-Carrots     " + eggplantNum + "-Eggplants     ";
+    }
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.gameObject.CompareTag("Item")) {
             GameObject obj = collision.collider.gameObject;
@@ -64,6 +83,15 @@ public class BasketManager : MonoBehaviour
             } else {
                 //this is an item for the basket
                 Crop crop = GameManager.instance.gameObject.GetComponent<ItemDatabase>().FindCrop(cropName);
+                if (crop.name == "Apple") {
+                    appleNum++;
+                } else if(crop.name == "Carrot") {
+                    carrotNum++;
+                } else if (crop.name == "Eggplant") {
+                    eggplantNum++;
+                }
+
+                ChangeText();
                 cropsInBasket.Add(crop);
                 Destroy(obj.gameObject);
             }
