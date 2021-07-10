@@ -46,8 +46,10 @@ public class FarmingManager : MonoBehaviour
                     obj.transform.parent = null;
                     objects.Remove(obj);
                     GameManager.instance.ChangeItemCount(-1);
-                    if (objects.Count <= 0)
+                    if (objects.Count <= 0) {
                         isHolding = false;
+                        GameManager.instance.handIcon.sprite = GameManager.instance.handIconSprite;
+                    }
                 }
             }
 
@@ -78,6 +80,15 @@ public class FarmingManager : MonoBehaviour
 
                         GameManager.instance.ChangeItemCount(1);
                         isHolding = true;
+
+                        if(obj.GetComponent<Item>().Name == "Apple") {
+                            GameManager.instance.handIcon.sprite = GameManager.instance.holdingIcons[0];
+                        } else if (obj.GetComponent<Item>().Name == "Eggplant") {
+                            GameManager.instance.handIcon.sprite = GameManager.instance.holdingIcons[1];
+                        } else if (obj.GetComponent<Item>().Name == "Carrot") {
+                            GameManager.instance.handIcon.sprite = GameManager.instance.holdingIcons[2];
+                        }
+
                     }
                 }
             } else { //you ARE holding onto something
@@ -115,8 +126,10 @@ public class FarmingManager : MonoBehaviour
                 obj.GetComponent<Rigidbody>().AddForce(handLocation.transform.forward * force, ForceMode.Impulse);
                 objects.Remove(obj);
                 GameManager.instance.ChangeItemCount(-1);
-                if (objects.Count <= 0)
+                if (objects.Count <= 0) {
                     isHolding = false;
+                    GameManager.instance.handIcon.sprite = GameManager.instance.handIconSprite;
+                }
             }
         }
     }

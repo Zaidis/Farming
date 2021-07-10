@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     [Header("Item Slots")]
     public List<GameObject> itemSlots = new List<GameObject>();
     public List<GameObject> items = new List<GameObject>();
+    [Header("UI Items")]
+    public Image handIcon;
+    public Sprite handIconSprite;
+    public Sprite[] holdingIcons;
     public GameObject currentItemSlot;
     /*
      * 1. Hoe

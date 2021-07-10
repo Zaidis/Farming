@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d29d72ef05ca0054a8d5a5491e186d29, type: 3}
-  m_Name: R_5
+  m_Name: R_6
   m_EditorClassIdentifier: 
   crops:
   - {fileID: 11400000, guid: 808868e61783f9943961f17897f6f9f1, type: 2}
   - {fileID: 11400000, guid: 808868e61783f9943961f17897f6f9f1, type: 2}
   - {fileID: 11400000, guid: 808868e61783f9943961f17897f6f9f1, type: 2}
+  - {fileID: 11400000, guid: 808868e61783f9943961f17897f6f9f1, type: 2}
+  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
+  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
+  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
+  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
   - {fileID: 11400000, guid: 11b3aa2593bff7548a24d29b4e1d6f73, type: 2}
-  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
-  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
-  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
-  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
-  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
-  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
-  - {fileID: 11400000, guid: 8dd9ecf97e9b23a4d82be87ae9c7ab52, type: 2}
-  recipeText: '3 Apples
+  - {fileID: 11400000, guid: 11b3aa2593bff7548a24d29b4e1d6f73, type: 2}
+  - {fileID: 11400000, guid: 11b3aa2593bff7548a24d29b4e1d6f73, type: 2}
+  - {fileID: 11400000, guid: 11b3aa2593bff7548a24d29b4e1d6f73, type: 2}
+  recipeText: '4 Apples
 
-    7 Carrots
+    4 Carrots
 
-    1 Eggplant'
+    4 Eggplant'
