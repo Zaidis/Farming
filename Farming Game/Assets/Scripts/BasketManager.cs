@@ -26,10 +26,6 @@ public class BasketManager : MonoBehaviour
     }
 
     private void Update() {
-        //var step = 100f * Time.deltaTime;
-        //Quaternion r1 = Quaternion.Euler(PlayerManager.instance.gameObject.transform.rotation.x, 90, 90);
-        //Quaternion r2 = Quaternion.Euler(basketText.transform.localRotation.x, 90, 90);
-        //basketText.transform.localRotation = Quaternion.RotateTowards(r2, r1, step);
         basketText.transform.LookAt(PlayerManager.instance.transform);
     }
     public void NewRecipe() {
@@ -47,7 +43,7 @@ public class BasketManager : MonoBehaviour
         whiteBoard.text = newRecipe.recipeText;
     }
     public bool CheckBasket() {
-        for(int i = 0; i < cropsInBasket.Count; i++) {
+        /*for(int i = 0; i < cropsInBasket.Count; i++) {
             Crop crop = cropsInBasket[i];
             for(int j = 0; j < recipe.Count; j++) {
                 if(crop == recipe[j]) {
@@ -55,7 +51,7 @@ public class BasketManager : MonoBehaviour
                     break;
                 }
             }
-        }
+        } */
 
         if(recipe.Count > 0) {
             //you pissed off the goat god
@@ -91,6 +87,12 @@ public class BasketManager : MonoBehaviour
                     eggplantNum++;
                 }
 
+                for(int i = 0; i < recipe.Count; i++) {
+                    if(crop == recipe[i]) {
+                        recipe.RemoveAt(i);
+                        break;
+                    }
+                }
                 ChangeText();
                 cropsInBasket.Add(crop);
                 Destroy(obj.gameObject);

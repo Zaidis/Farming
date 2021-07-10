@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         controller = this.gameObject.GetComponent<CharacterController>();
+        Physics.IgnoreLayerCollision(9, 14);
     }
     private void Start() {
         mouseSensitivity = 300f;
